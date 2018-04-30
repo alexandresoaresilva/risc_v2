@@ -4,7 +4,7 @@ module top_v2_tb;
 
 reg reset, clock;
 
-wire [9:0] PC_muxC_result_wire;
+wire [9:0] PC_IF_output_wire;
 wire [9:0] PC_2_out_wire;
 wire [31:0] IR_IF_wire;
 
@@ -39,14 +39,14 @@ wire [31:0] bus_D_WB_wire;
 
 wire RW_WB_wire;
 wire [4:0] DA_WB_wire;
-wire [31:0] regFile_DAout_WB_wire;
+wire [31:0] reg_DR_just_written_out_wire;
 wire [31:0] mux_D_prime_output_wire;
 
 top_v2 UUT(
     .reset(reset  ),
     .clock( clock ),
     //PC(  ), IR
-    .PC_muxC_result_output( PC_muxC_result_wire  ),
+    .PC_IF_output( PC_IF_output_wire  ),
     .PC_2_out( PC_2_out_wire ),
     .IR_IF_output( IR_IF_wire ),
     //CU
@@ -82,7 +82,7 @@ top_v2 UUT(
     //register write
     .RW_WB_output(RW_WB_wire),
     .DA_WB_output( DA_WB_wire ),
-    .reg_DR_just_written_out(regFile_DAout_WB_wire  ),
+    .reg_DR_just_written_out(reg_DR_just_written_out_wire ),
     .mux_D_prime_output(mux_D_prime_output_wire)
 );
     initial begin
@@ -90,7 +90,7 @@ top_v2 UUT(
         reset = 1;
         #5
         reset = 0;
-        #500
+        #50000
         $finish;
     end
     always #5 clock = ~clock;

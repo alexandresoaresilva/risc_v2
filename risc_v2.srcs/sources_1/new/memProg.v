@@ -39,16 +39,16 @@ module memProg(
     //JML - jump and link
     parameter [6:0]  JML = 7'b0000111; // PC <- PC + 1 + se IM, R[DR] <- PC + 1
 
-    parameter [4:0]  R0 = 5'd0; // None
-    parameter [4:0]  R1 = 5'd1; // R[DR] <- R[SA] + R[SB]
-    parameter [4:0]  R2 = 5'd2; // R[DR] <- R[SA] + not(R[SB]) + 1
-    parameter [4:0]  R3  = 5'd3 ;
-    parameter [4:0]  R4  = 5'd4 ;
-    parameter [4:0]  R5  = 5'd5 ;
-    parameter [4:0]  R6  = 5'd6 ;
-    parameter [4:0]  R7  = 5'd7 ;
-    parameter [4:0]  R8  = 5'd8 ;
-    parameter [4:0]  R9  = 5'd9 ;
+    parameter [4:0]  R0  = 5'd0; // None
+    parameter [4:0]  R1  = 5'd1; // R[DR] <- R[SA] + R[SB]
+    parameter [4:0]  R2  = 5'd2; // R[DR] <- R[SA] + not(R[SB]) + 1
+    parameter [4:0]  R3  = 5'd3;
+    parameter [4:0]  R4  = 5'd4;
+    parameter [4:0]  R5  = 5'd5;
+    parameter [4:0]  R6  = 5'd6;
+    parameter [4:0]  R7  = 5'd7;
+    parameter [4:0]  R8  = 5'd8;
+    parameter [4:0]  R9  = 5'd9;
     parameter [4:0]  R10 = 5'd10;
     parameter [4:0]  R11 = 5'd11;
     parameter [4:0]  R12 = 5'd12;
@@ -56,23 +56,86 @@ module memProg(
     parameter [4:0]  R14 = 5'd14;
     parameter [4:0]  R15 = 5'd15;
     parameter [4:0]  R16 = 5'd16;
+    parameter [4:0]  R17 = 5'd17;
+    parameter [4:0]  R18 = 5'd18;
+    parameter [4:0]  R19 = 5'd19;
+    parameter [4:0]  R20 = 5'd20;
+    parameter [4:0]  R21 = 5'd21;
+    parameter [4:0] R22 = 5'd22;
+    parameter [4:0] R23 = 5'd23;
+    parameter [4:0] R24 = 5'd24;
+    parameter [4:0] R25 = 5'd25;
+    parameter [4:0] R26 = 5'd26;
+    parameter [4:0] R27 = 5'd27;
+    parameter [4:0] R28 = 5'd28;
+    parameter [4:0] R29 = 5'd29;
+    parameter [4:0] R30 = 5'd30;
+    parameter [4:0] R31 = 5'd31;
     parameter [9:0]  TEN_B_Z = 10'd0;
-    parameter [14:0]  Fifteen_B_Z = 15'd0;
+    parameter [14:0]  FIFTEEN_B_Z = 15'd0;
     parameter [14:0]   END = 15'd32;
 
-
-    integer i;
+    integer i, j, k;
     reg [31:0] memword [1023:0];
 
     initial begin
-        i  = 0;
-        //IR_reg = {opcode_reg, DR_reg, SA_reg, IM_reg};
-        //IR_reg = {opcode_reg, DR_reg, SA_reg, SB_reg,  null_ten_bits};
-//        memword[0] = {NOP, 5'b10001, 5'b10000, 5'b00101, TEN_B_Z};
-        //IR_reg = {opcode_reg, DR_reg, SA_reg, IM_reg};
-        //memword[0] =  {NOP, 5'd0,  5'd0, 15'h0};
-//
+        {i, j, k}  = 0;
+//////  CLEAR used registers
+        memword[0] = {MOV, R5, R0, FIFTEEN_B_Z}; memword[4] = {MOV, R6, R0, FIFTEEN_B_Z};
+        memword[1] = {MOV, R7, R0, FIFTEEN_B_Z}; memword[5] = {MOV, R8, R0, FIFTEEN_B_Z};
+        memword[2] = {MOV, R11, R0, FIFTEEN_B_Z}; memword[6] = {MOV, R12, R0, FIFTEEN_B_Z};
+        memword[3] = {MOV, R13, R0, FIFTEEN_B_Z}; memword[7] = {MOV, R16, R0, FIFTEEN_B_Z};
 
+//////  BIT mask from sign bits in A & B - 8000_0000
+        memword[8] = {LSL, R6, R1, TEN_B_Z, 5'd31};
+        // ****************************************************************************
+//////  operands (numbers to be multiplied)
+   ///////// 1 : large
+        //multiplier
+        memword[9] = {ADI, R3, R0, 15'd10};
+        //and multiplicand
+        memword[10] = {ADI, R4, R0, 15'hFFF};
+        memword[11] = {LSL, R4, R4, 15'd12};
+        memword[12] = {ORI, R4, R4, 15'h000};
+        memword[13] = {LSL, R4, R4, 15'd8};
+        memword[14] = {ORI, R4, R4, 15'h01};
+    ///////// 2 : small
+       // //  //multiplier
+       //  memword[9] = {ADI, R3, R0, 15'd2};
+       // //and multiplicand
+       //  memword[10] = {ADI, R4, R0, 15'd1235};
+        // ****************************************************************************
+////// A masked in R6 & R7, so only their sign bits
+    //// A /////
+        memword[15] = {AND, R7, R6, R3, TEN_B_Z};//sign of A IN r7
+       // Absolute value or not for A ///////////////////////////////////////
+        memword[16] = {BZ, R0, R7, 15'd2};
+        memword[17] = {SUB, R9, R0, R3, TEN_B_Z}; //two's complement
+        memword[18] = {JMP, R9, R0, 15'd1}; //needed for not rewriting the register
+        memword[19] = {MOV, R9, R3, FIFTEEN_B_Z};//abs(3)
+        ////// B masked in R6 & R7, so only their sign bits
+    //// B /////
+        memword[20] = {AND, R8, R6, R4, TEN_B_Z}; //sign of B IN r8
+            // Absolute value or not B  ///////////////////////////////////////
+        memword[21] = {BZ, R0, R8, 15'd2};
+        memword[22] = {SUB, R10, R0, R4, TEN_B_Z}; //two's complement
+        memword[23] = {JMP, R10, R0, 15'd1}; //needed for not rewriting the register
+        memword[24] = {MOV, R10, R4, FIFTEEN_B_Z};
+
+        ////// sign of RESULT
+        memword[25] = {XOR, R11, R7, R8, TEN_B_Z};
+        memword[26] = {AIU, R16, R0, 15'd28}; //addr of jump
+
+////// building the shifts
+        memword[27] = {ADD, R12, R10, R0, TEN_B_Z};
+        memword[28] = {SUB, R9, R9, R1, TEN_B_Z}; //test if 1 remains
+        memword[29] = {BZ, R0, R9, 15'd3};//if one remains, add one time multiplicand to the result
+        memword[30] = {ADD, R12, R12, R10, TEN_B_Z};
+        memword[31] = {ADDC, R13, R13, R0, TEN_B_Z};
+        memword[32] = {JMR, R0, R16, FIFTEEN_B_Z};
+        //memword[33] = {OR, R13, R13, R11, TEN_B_Z};
+        memword[34] = {MOV, R12, R12, FIFTEEN_B_Z};
+        i=35;
 /*
 Three register Type
 31_______25 | 24_______20 | 19______15 | 14_____10 | 9______0
@@ -84,32 +147,9 @@ Two register Type
 
 Branch register Type
 31_______25 | 24_______20 | 19______15 | 14__________________0
-  OPCODE           DR           SA            Target offset
+  OPCODE           DR           SA            Target offset */
 
-
-*/
-
-
-        //Move and check if Zero
-        memword[i] =  {MOV, R3, R2, Fifteen_B_Z};
-        i = i + 1;
-        memword[i] =  {MOV, R2, R0, Fifteen_B_Z};
-        i = i + 1;
-        memword[i] =  {BZ,  R0,  R1, 15'd10};  //Branch to the end if R2 is Zero
-        //i = i + 11;
-        i = i + 5;
-        //Move and check if Zero
-        memword[i] =  {MOV, R4, R14, Fifteen_B_Z};
-        i = i + 6;
-        //i = i + 1;
-        memword[i] =  {BZ,  R0,  R2, 15'd10}; // Branch to the end if R1 is Zero
-        i = i + 5;
-        memword[i] =  {MOV, R10, R15, Fifteen_B_Z};
-        i = i + 6;
-        memword[i] =  {MOV, R17, R20, Fifteen_B_Z};
-        i = i + 1;
-
-        for(i=i + 1; i< 1024; i = i+1)
+        for(i=i; i< 1024; i = i+1)
             memword[i] = 32'd0;
     end
 
