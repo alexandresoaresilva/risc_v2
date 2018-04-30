@@ -65,7 +65,7 @@ module ALU(
             V <= ( (select_FS == 5'b00001 |  select_FS == 5'b00010 ) & //for addition
                        ( (~A[31] & ~B[31] & result[31])
                        | (A[31] & B[31] & ~result[31]) )
-                       ) | ( (select_FS==5'b00101 | select_FS==5'b00110 )//for subtraction, dec 
+                       ) | ( (select_FS==5'b00101 | select_FS==5'b00110 )//for subtraction, dec
                        & ( (~A[31] & B[31] & result[31])
                        | (A[31] & ~B[31] & ~result[31])
                        ) ) ; //overflow's end - & NOT reset so it goes to ZERO if reset

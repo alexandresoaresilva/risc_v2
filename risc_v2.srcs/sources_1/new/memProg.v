@@ -96,7 +96,7 @@ module memProg(
         //and multiplicand
         memword[10] = {ADI, R4, R0, 15'hFFF};
         memword[11] = {LSL, R4, R4, 15'd12};
-        memword[12] = {ORI, R4, R4, 15'h000};
+        memword[12] = {ORI, R4, R4, 15'hfff};
         memword[13] = {LSL, R4, R4, 15'd8};
         memword[14] = {ORI, R4, R4, 15'h01};
     ///////// 2 : small
@@ -112,7 +112,7 @@ module memProg(
         memword[16] = {BZ, R0, R7, 15'd2};
         memword[17] = {SUB, R9, R0, R3, TEN_B_Z}; //two's complement
         memword[18] = {JMP, R9, R0, 15'd1}; //needed for not rewriting the register
-        memword[19] = {MOV, R9, R3, FIFTEEN_B_Z};//abs(3)
+        memword[19] = {MOV, R9, R3, FIFTEEN_B_Z};///default for positive
         ////// B masked in R6 & R7, so only their sign bits
     //// B /////
         memword[20] = {AND, R8, R6, R4, TEN_B_Z}; //sign of B IN r8
@@ -120,22 +120,33 @@ module memProg(
         memword[21] = {BZ, R0, R8, 15'd2};
         memword[22] = {SUB, R10, R0, R4, TEN_B_Z}; //two's complement
         memword[23] = {JMP, R10, R0, 15'd1}; //needed for not rewriting the register
-        memword[24] = {MOV, R10, R4, FIFTEEN_B_Z};
+        memword[24] = {MOV, R10, R4, FIFTEEN_B_Z}; //default for positive
 
         ////// sign of RESULT
         memword[25] = {XOR, R11, R7, R8, TEN_B_Z};
-        memword[26] = {AIU, R16, R0, 15'd28}; //addr of jump
-
-////// building the shifts
+        memword[26] = {AIU, R16, R0, 15'd29}; //addr of jump
+////// multiply
+    //1st time multiplication
         memword[27] = {ADD, R12, R10, R0, TEN_B_Z};
-        memword[28] = {SUB, R9, R9, R1, TEN_B_Z}; //test if 1 remains
-        memword[29] = {BZ, R0, R9, 15'd3};//if one remains, add one time multiplicand to the result
-        memword[30] = {ADD, R12, R12, R10, TEN_B_Z};
-        memword[31] = {ADDC, R13, R13, R0, TEN_B_Z};
-        memword[32] = {JMR, R0, R16, FIFTEEN_B_Z};
+        memword[28] = {ADDC, R13, R13, R0, TEN_B_Z};
+
+        memword[29] = {SUB, R9, R9, R1, TEN_B_Z}; //test if 1 remains
+        memword[30] = {BZ, R0, R9, 15'd4};//if one remains, add one time multiplicand to the result
+        memword[31] = {ADD, R12, R12, R10, TEN_B_Z};
+        memword[32] = {ADDC, R13, R13, R0, TEN_B_Z};
+        memword[33] = {JMR, R0, R16, FIFTEEN_B_Z};
         //memword[33] = {OR, R13, R13, R11, TEN_B_Z};
-        memword[34] = {MOV, R12, R12, FIFTEEN_B_Z};
-        i=35;
+        memword[34] = {AND, R11, R11, R6, TEN_B_Z};
+        memword[35] = {BZ, R0, R11, 15'd4};
+        //IF previous == 1, two's complement onto the results
+        memword[36] = {NOT, R12, R12, FIFTEEN_B_Z};
+        memword[37] = {NOT, R13, R13, FIFTEEN_B_Z};
+        memword[38] = {ADD, R13, R13, R1, TEN_B_Z};
+        memword[39] = {ADD, R12, R12, R1, TEN_B_Z};
+
+        memword[40] = {MOV, R13, R13, FIFTEEN_B_Z};
+        memword[41] = {MOV, R12, R12, FIFTEEN_B_Z};
+        i=50;
 /*
 Three register Type
 31_______25 | 24_______20 | 19______15 | 14_____10 | 9______0

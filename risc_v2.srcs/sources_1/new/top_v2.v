@@ -190,11 +190,12 @@ module top_v2(
             RAA_EX_reg <= muxA_bus_A_DOF_wire;
             B_EX_reg <=  muxB_bus_B_DOF_wire;
             //carry initial begin
-            //C_in_IF_reg <=C_in_WB_reg;
-            //C_in_DOF_reg <= C_in_WB_reg;
-            //C_in_EX_reg <= C_in_DOF_reg;
-            C_in_EX_reg <= C_EX_wire;
-            //C_in_WB_reg;
+            // C_in_IF_reg <= C_EX_wire;
+            // C_in_DOF_reg <= C_in_IF_reg;
+            C_in_DOF_reg <=  C_EX_wire;
+            //
+            C_in_EX_reg <= C_in_DOF_reg;
+            //C_in_WB_reg <=  C_EX_wire;
             // C_in_EX_reg <= C_in_DOF_reg;
         /////WB
             //from data memory
@@ -357,7 +358,7 @@ module top_v2(
     // assign  muxB_bus_B_DOF_output =  muxB_bus_B_DOF_wire;
     assign V_EX_output = V_EX_wire;
     assign N_EX_output = N_EX_wire;
-    assign C_EX_output = C_EX_wire;
+    assign C_EX_output = C_in_EX_reg;
     assign Z_EX_output =Z_EX_wire;
     assign data_OUT_memory_EX_output = data_OUT_memory_EX_wire;
     assign F_EX_output = F_EX_wire;
