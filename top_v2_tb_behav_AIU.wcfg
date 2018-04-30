@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_v2_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="top_v2_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="144500001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="237"></NameColumnWidth>
+      <ValueColumnWidth column_width="76"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="31" />
+   <wave_markers>
+      <marker time="10002000" label="" />
+      <marker time="20004000" label="" />
+      <marker time="30000000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/top_v2_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/clock" type="logic">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/PC_muxC_result_wire" type="array">
+      <obj_property name="ElementShortName">PC_muxC_result_wire[9:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_muxC_result_wire[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/IR_IF_wire" type="array">
+      <obj_property name="ElementShortName">IR_IF_wire[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IR_IF_wire[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/CS_DOF_wire" type="logic">
+      <obj_property name="ElementShortName">CS_DOF_wire</obj_property>
+      <obj_property name="ObjectShortName">CS_DOF_wire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/MA_DOF_wire" type="logic">
+      <obj_property name="ElementShortName">MA_DOF_wire</obj_property>
+      <obj_property name="ObjectShortName">MA_DOF_wire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/MB_DOF_wire" type="logic">
+      <obj_property name="ElementShortName">MB_DOF_wire</obj_property>
+      <obj_property name="ObjectShortName">MB_DOF_wire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/RW_WB_wire" type="logic">
+      <obj_property name="ElementShortName">RW_WB_wire</obj_property>
+      <obj_property name="ObjectShortName">RW_WB_wire</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/PS_DOF_wire" type="logic">
+      <obj_property name="ElementShortName">PS_DOF_wire</obj_property>
+      <obj_property name="ObjectShortName">PS_DOF_wire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/MW_DOF_wire" type="logic">
+      <obj_property name="ElementShortName">MW_DOF_wire</obj_property>
+      <obj_property name="ObjectShortName">MW_DOF_wire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/MD_WB_wire" type="array">
+      <obj_property name="ElementShortName">MD_WB_wire[1:0]</obj_property>
+      <obj_property name="ObjectShortName">MD_WB_wire[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/BS_DOF_wire" type="array">
+      <obj_property name="ElementShortName">BS_DOF_wire[1:0]</obj_property>
+      <obj_property name="ObjectShortName">BS_DOF_wire[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/IM_filled_DOF_wire" type="array">
+      <obj_property name="ElementShortName">IM_filled_DOF_wire[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IM_filled_DOF_wire[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/AAddr_DOF_wire" type="array">
+      <obj_property name="ElementShortName">AAddr_DOF_wire[4:0]</obj_property>
+      <obj_property name="ObjectShortName">AAddr_DOF_wire[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/BAddr_DOF_wire" type="array">
+      <obj_property name="ElementShortName">BAddr_DOF_wire[4:0]</obj_property>
+      <obj_property name="ObjectShortName">BAddr_DOF_wire[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/SH_DOF_wire" type="array">
+      <obj_property name="ElementShortName">SH_DOF_wire[4:0]</obj_property>
+      <obj_property name="ObjectShortName">SH_DOF_wire[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/DA_WB_wire" type="array">
+      <obj_property name="ElementShortName">DA_WB_wire[4:0]</obj_property>
+      <obj_property name="ObjectShortName">DA_WB_wire[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/muxB_bus_A_DOF_wire" type="array">
+      <obj_property name="ElementShortName">muxB_bus_A_DOF_wire[31:0]</obj_property>
+      <obj_property name="ObjectShortName">muxB_bus_A_DOF_wire[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/regfILE_DAout_WB_wire" type="array">
+      <obj_property name="ElementShortName">regfILE_DAout_WB_wire[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfILE_DAout_WB_wire[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/V_EX_wire" type="logic">
+      <obj_property name="ElementShortName">V_EX_wire</obj_property>
+      <obj_property name="ObjectShortName">V_EX_wire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/N_EX_wire" type="logic">
+      <obj_property name="ElementShortName">N_EX_wire</obj_property>
+      <obj_property name="ObjectShortName">N_EX_wire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/C_EX_wire" type="logic">
+      <obj_property name="ElementShortName">C_EX_wire</obj_property>
+      <obj_property name="ObjectShortName">C_EX_wire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/Z_EX_wire" type="logic">
+      <obj_property name="ElementShortName">Z_EX_wire</obj_property>
+      <obj_property name="ObjectShortName">Z_EX_wire</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/data_OUT_memory_EX_wire" type="array">
+      <obj_property name="ElementShortName">data_OUT_memory_EX_wire[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_OUT_memory_EX_wire[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/FS_DOF_wire" type="array">
+      <obj_property name="ElementShortName">FS_DOF_wire[4:0]</obj_property>
+      <obj_property name="ObjectShortName">FS_DOF_wire[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/F_EX_wire" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">F_EX_wire[31:0]</obj_property>
+      <obj_property name="ObjectShortName">F_EX_wire[31:0]</obj_property>
+      <obj_property name="label">FU result</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/BrA_EX_wire" type="array">
+      <obj_property name="ElementShortName">BrA_EX_wire[9:0]</obj_property>
+      <obj_property name="ObjectShortName">BrA_EX_wire[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/PC_2_out_wire" type="array">
+      <obj_property name="ElementShortName">PC_2_out_wire[9:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_2_out_wire[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/bus_D_WB_wire" type="array">
+      <obj_property name="ElementShortName">bus_D_WB_wire[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bus_D_WB_wire[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/RAA_EX_reg_wire" type="array">
+      <obj_property name="ElementShortName">RAA_EX_reg_wire[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RAA_EX_reg_wire[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_v2_tb/B_EX_reg_wire" type="array">
+      <obj_property name="ElementShortName">B_EX_reg_wire[31:0]</obj_property>
+      <obj_property name="ObjectShortName">B_EX_reg_wire[31:0]</obj_property>
+   </wvobject>
+</wave_config>

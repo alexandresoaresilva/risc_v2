@@ -1,0 +1,28 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sim_1/new/adder_tb.v,1523499242,verilog,,,,adder_tb,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sim_1/new/instr_dec_tb.v,1523504081,verilog,,,,intr_dec_tb,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sim_1/new/memProg_tb.v,1523506557,verilog,,,,memProg_tb,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sim_1/new/memory_data_tb.v,1523571062,verilog,,,,memory_data_tb,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sim_1/new/mux_A_B.v,1524506819,verilog,,D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/mux_C.v,,mux_A_B,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sim_1/new/mux_A_B_tb.v,1523641219,verilog,,,,mux_A_B_tb,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sim_1/new/mux_C_tb.v,1523459256,verilog,,,,mux_C_tb,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sim_1/new/mux_D.v,1523648291,verilog,,D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/mux_D_prime.v,,mux_D,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sim_1/new/mux_D_tb.v,1523567891,verilog,,,,mux_D_tb,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sim_1/new/register_file_tb.v,1523511969,verilog,,,,register_file_tb,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/imports/new/register_file.v,1524894550,verilog,,D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/top_v2.v,,register_file,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/ALU.v,1524503750,verilog,,D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/adder.v,,ALU,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/ALU_tb.v,1523497020,verilog,,,,ALU_tb,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/adder.v,1523567625,verilog,,D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/constant_unit.v,,adder,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/constant_unit.v,1523642551,verilog,,D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/instr_dec.v,,constant_unit,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/constant_unit_tb.v,1523499957,verilog,,,,constant_unit_tb,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/instr_dec.v,1524458446,verilog,,D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/memProg.v,,instr_dec,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/memProg.v,1525045969,verilog,,D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/memory_data.v,,memProg,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/memory_data.v,1524509482,verilog,,D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sim_1/new/mux_A_B.v,,memory_data,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/mux_C.v,1523589119,verilog,,D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sim_1/new/mux_D.v,,mux_C,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/mux_D_prime.v,1524511770,verilog,,D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/imports/new/register_file.v,,mux_D_prime,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/top_v2.v,1525045309,verilog,,D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/top_v2_tb.v,,top_v2,,,,,,,,
+D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/top_v2_tb.v,1525044485,verilog,,,,top_v2_tb,,,,,,,,

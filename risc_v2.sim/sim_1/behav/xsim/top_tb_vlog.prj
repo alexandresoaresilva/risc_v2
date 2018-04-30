@@ -1,0 +1,20 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../risc_v2.srcs/sources_1/new/ALU.v" \
+"../../../../risc_v2.srcs/sources_1/new/adder.v" \
+"../../../../risc_v2.srcs/sources_1/new/constant_unit.v" \
+"../../../../risc_v2.srcs/sources_1/new/instr_dec.v" \
+"../../../../risc_v2.srcs/sources_1/new/memProg.v" \
+"../../../../risc_v2.srcs/sources_1/new/memory_data.v" \
+"../../../../risc_v2.srcs/sim_1/new/mux_A_B.v" \
+"../../../../risc_v2.srcs/sources_1/new/mux_C.v" \
+"../../../../risc_v2.srcs/sim_1/new/mux_D.v" \
+"../../../../risc_v2.srcs/sources_1/new/register_file.v" \
+"../../../../risc_v2.srcs/sources_1/new/top.v" \
+"../../../../risc_v2.srcs/sim_1/new/top_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

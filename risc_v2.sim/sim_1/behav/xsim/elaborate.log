@@ -1,0 +1,25 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto d550ac0e4f1b4dbca5711e9d0979c4b8 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot top_v2_tb_behav xil_defaultlib.top_v2_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/ALU.v" Line 19. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.mux_C
+Compiling module xil_defaultlib.memProg
+Compiling module xil_defaultlib.instr_dec
+Compiling module xil_defaultlib.constant_unit
+Compiling module xil_defaultlib.mux_A_B
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.memory_data
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.mux_D
+Compiling module xil_defaultlib.mux_D_prime
+Compiling module xil_defaultlib.register_file
+Compiling module xil_defaultlib.top_v2
+Compiling module xil_defaultlib.top_v2_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_v2_tb_behav

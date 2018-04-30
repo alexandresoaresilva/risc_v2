@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/constant_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module constant_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/instr_dec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instr_dec
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/memProg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memProg
+ERROR: [VRFC 10-91] R17 is not declared [D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/memProg.v:109]
+ERROR: [VRFC 10-1040] module memProg ignored due to previous errors [D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/memProg.v:1]
