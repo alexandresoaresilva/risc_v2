@@ -22,8 +22,10 @@ integer counter;
         // data[0]=0;
         // data[1]=0;
         // data[2]=0;
-        // data[3]=0;   //Neg Flag 1
-        // data[4]=0;   //Neg flag 2
+         data[3]=32'd5;
+         //data[4]=32'hFFFF_9BD9;
+         data[4]=32'hFFDB_6100?;
+         
         // data[5]=0;  // Neg flag
         // data[6]=0;  // set less than Flag
         // data[7]=0;

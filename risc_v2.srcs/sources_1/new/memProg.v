@@ -89,21 +89,23 @@ module memProg(
 //////  BIT mask from sign bits in A & B - 8000_0000
         memword[8] = {LSL, R6, R1, TEN_B_Z, 5'd31};
         // ****************************************************************************
+        memword[9] = {MOV, R3, R3, 15'd0};
+        memword[10] = {MOV, R4, R4, 15'd0};
 //////  operands (numbers to be multiplied)
    ///////// 1 : large
         //multiplier
-        memword[9] = {ADI, R3, R0, 15'd10};
-        //and multiplicand
-        memword[10] = {ADI, R4, R0, 15'hFFF};
-        memword[11] = {LSL, R4, R4, 15'd12};
-        memword[12] = {ORI, R4, R4, 15'hfff};
-        memword[13] = {LSL, R4, R4, 15'd8};
-        memword[14] = {ORI, R4, R4, 15'h01};
+//        memword[9] = {ADI, R3, R0, 15'd5};
+//        //and multiplicand
+//        memword[10] = {ADI, R4, R0, 15'hFFF};
+//        memword[11] = {LSL, R4, R4, 15'd12};
+//        memword[12] = {ORI, R4, R4, 15'hfff};
+//        memword[13] = {LSL, R4, R4, 15'd8};
+//        memword[14] = {ORI, R4, R4, 15'h01};
     ///////// 2 : small
        // //  //multiplier
-       //  memword[9] = {ADI, R3, R0, 15'd2};
-       // //and multiplicand
-       //  memword[10] = {ADI, R4, R0, 15'd1235};
+//         memword[9] = {ADI, R3, R0, 15'd10};
+//        //and multiplicand
+//         memword[10] = {ADI, R4, R0, 15'd1};
         // ****************************************************************************
 ////// A masked in R6 & R7, so only their sign bits
     //// A /////
@@ -141,8 +143,9 @@ module memProg(
         //IF previous == 1, two's complement onto the results
         memword[36] = {NOT, R12, R12, FIFTEEN_B_Z};
         memword[37] = {NOT, R13, R13, FIFTEEN_B_Z};
-        memword[38] = {ADD, R13, R13, R1, TEN_B_Z};
-        memword[39] = {ADD, R12, R12, R1, TEN_B_Z};
+        //memword[38] = {ADD, R13, R13, R1, TEN_B_Z};
+        memword[38] = {ADD, R12, R12, R1, TEN_B_Z};
+        memword[39] = {ADDC, R13, R13, R0, TEN_B_Z};
 
         memword[40] = {MOV, R13, R13, FIFTEEN_B_Z};
         memword[41] = {MOV, R12, R12, FIFTEEN_B_Z};

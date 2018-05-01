@@ -192,9 +192,9 @@ module top_v2(
             //carry initial begin
             // C_in_IF_reg <= C_EX_wire;
             // C_in_DOF_reg <= C_in_IF_reg;
-            C_in_DOF_reg <=  C_EX_wire;
+            //C_in_DOF_reg <=  C_EX_wire;
             //
-            C_in_EX_reg <= C_in_DOF_reg;
+            C_in_EX_reg <= C_EX_wire;
             //C_in_WB_reg <=  C_EX_wire;
             // C_in_EX_reg <= C_in_DOF_reg;
         /////WB
