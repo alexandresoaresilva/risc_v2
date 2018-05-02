@@ -112,10 +112,10 @@ module top_v2(
     wire [1:0] mux_c_sel_wire;
     wire branch_NOT_taken_wire;
     wire [1:0] mux_A_sel, mux_B_sel;
-    
-    assign mux_A_sel = HA_wire? 2'b10 : {1'b0, MA_DOF_wire }; 
+
+    assign mux_A_sel = HA_wire? 2'b10 : {1'b0, MA_DOF_wire };
     assign mux_B_sel = HB_wire? 2'b10 : {1'b0, MB_DOF_wire };
-     
+
 //// counter for clock tick delay
     reg [1:0] counter_reg;
     assign mux_c_sel_wire = { BS_EX_reg[1] ,
@@ -182,12 +182,13 @@ module top_v2(
             RAA_EX_reg <= muxA_bus_A_DOF_wire;
             B_EX_reg <=  muxB_bus_B_DOF_wire;
             //carry initial begin
-            C_in_WB_reg <= C_EX_wire;
-            C_in_IF_reg <= C_in_WB_reg;
-            C_in_DOF_reg <= C_in_IF_reg;
-            
-            C_in_EX_reg  <= C_in_WB_reg | C_EX_wire;
-                                             
+            // C_in_WB_reg <= C_EX_wire;
+            // C_in_IF_reg <= C_in_WB_reg;
+            // C_in_DOF_reg <= C_in_IF_reg;
+
+            C_in_EX_reg  <= C_EX_wire;
+			//C_in_WB_reg |
+
         /////WB
             //from data memory
             data_OUT_memory_WB_reg <= data_OUT_memory_EX_wire;
@@ -279,7 +280,7 @@ module top_v2(
             //RAA_EX_reg, B_EX_reg;
         .reset(reset),
         .carry_in(C_in_EX_reg),
-        //.carry_in(C_in_EX_reg),
+        //.carry_in(C_EX_wire),
         .select_FS(FS_EX_reg),
         .A(RAA_EX_reg),
         .B(B_EX_reg),

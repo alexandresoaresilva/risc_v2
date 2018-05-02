@@ -28,7 +28,7 @@ module ALU(
     // Z == zero
     );
     wire [63:0] logical_shift;
-
+    reg Carry_In_reg;
     initial  begin
         C <= 0;
         result <= 0;
@@ -38,14 +38,14 @@ module ALU(
 
     always@(*) begin
         if (reset) begin
-            {C, V, N, Z, result} <= 0;
+            {C, V, N, Z, result, Carry_In_reg} <= 0;
         end
         else begin
             case(select_FS)
               5'b00000 :           {C, result} <= {1'b0, A}; //0 transfer A
               5'b00001 :           {C, result} <= {1'b0, A} + 1;  //1. increment A
               5'b00010 :           {C, result} <= {1'b0, A} + {1'b0, B}; //2. addition
-              5'b00011 :           {C, result} <= {1'b0, A} +{1'b0,  B} + carry_in; //3. Add with carry input of 1
+              5'b00011 :           {C, result} <= {1'b0, A} +{1'b0,  B} + (Carry_In_reg | carry_in); //3. Add with carry input of 1
               5'b00100 :           {C, result} <= {1'b0, A}+ {1'b0, (~B)}; //4. A plus 1's complement of B
               5'b00101 :           {C, result} <= A + (~B) + 1; //5. Subtration or A + (~B) + 1
               5'b00110 :           {C, result} <= {1'b0, A} - 1; //6. Decrement A
@@ -55,10 +55,10 @@ module ALU(
               5'b01100, 5'b01101 : {C, result} <= (A ^ B); // 12 - 13  XOR
               5'b01110, 5'b01111 : {C, result} <= ~A; // 14 - 15 NOT (1's complement)
             //  5'b10000 :           {C, result} = {1'b0, B};  // 16 transfer B
-              // 5'b10100 :           {C, result} = logical_shift >> SH; // 20 shift right
-              // 5'b11000 :           {C, result} = logical_shift << SH; // 24 shift left
               5'b10000 :           {C, result} <= logical_shift << SH; // 16 shift left; CARRY doesn't work
               5'b10001 :           {C, result} <= logical_shift >> SH; // 17 shift right
+              // 5'b10000 :           {C, result} <= logical_shift << SH; // 16 shift left; CARRY doesn't work
+              // 5'b10001 :           {C, result} <= logical_shift >> SH; // 17 shift right
               default :            {C, result} <= 0;
             endcase
             //updates flags
@@ -72,5 +72,10 @@ module ALU(
             N <=  result[31];  //
             Z <=  ~|(result[31:0]);
          end
+         //updaes carry in
+         if (select_FS == 5'b00011)
+             Carry_In_reg <= 0;
+         else
+             Carry_In_reg <= carry_in;
     end //end of always@
 endmodule

@@ -11,37 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="177072750fs"></ZoomStartTime>
-      <ZoomEndTime time="256872751fs"></ZoomEndTime>
-      <Cursor1Time time="210423000fs"></Cursor1Time>
+      <ZoomStartTime time="40557833333fs"></ZoomStartTime>
+      <ZoomEndTime time="40639133334fs"></ZoomEndTime>
+      <Cursor1Time time="40630000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="170"></NameColumnWidth>
+      <NameColumnWidth column_width="169"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
-   <wave_markers>
-      <marker time="35100000" label="" />
-      <marker time="10000000" label="" />
-      <marker time="20000000" label="" />
-      <marker time="45300000" label="" />
-      <marker time="75035000" label="" />
-      <marker time="94985000" label="" />
-      <marker time="115001000" label="" />
-      <marker time="374960000" label="" />
-      <marker time="395000000" label="" />
-      <marker time="415008000" label="" />
-      <marker time="155058000" label="" />
-      <marker time="175108000" label="" />
-      <marker time="195034000" label="" />
-      <marker time="215000000" label="" />
-      <marker time="235000000" label="" />
-      <marker time="255041000" label="" />
-      <marker time="275015000" label="" />
-      <marker time="295000000" label="" />
-      <marker time="314996000" label="" />
-      <marker time="335096000" label="" />
-   </wave_markers>
+   <WVObjectSize size="11" />
    <wvobject fp_name="/top_v2_tb/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
@@ -50,106 +28,42 @@
       <obj_property name="ElementShortName">clock</obj_property>
       <obj_property name="ObjectShortName">clock</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_v2_tb/PC_muxC_result_wire" type="array">
-      <obj_property name="ElementShortName">PC_muxC_result_wire[9:0]</obj_property>
-      <obj_property name="ObjectShortName">PC_muxC_result_wire[9:0]</obj_property>
+   <wvobject fp_name="/top_v2_tb/PC_IF_output_wire" type="array">
+      <obj_property name="ElementShortName">PC_IF_output_wire[9:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_IF_output_wire[9:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_v2_tb/PC_2_out_wire" type="array">
-      <obj_property name="ElementShortName">PC_2_out_wire[9:0]</obj_property>
-      <obj_property name="ObjectShortName">PC_2_out_wire[9:0]</obj_property>
-      <obj_property name="CustomSignalColor">#FF0000</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_v2_tb/CS_DOF_wire" type="logic">
-      <obj_property name="ElementShortName">CS_DOF_wire</obj_property>
-      <obj_property name="ObjectShortName">CS_DOF_wire</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_v2_tb/IM_filled_DOF_wire" type="array">
-      <obj_property name="ElementShortName">IM_filled_DOF_wire[31:0]</obj_property>
-      <obj_property name="ObjectShortName">IM_filled_DOF_wire[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_v2_tb/RAA_EX_reg_wire" type="array">
-      <obj_property name="ElementShortName">RAA_EX_reg_wire[31:0]</obj_property>
-      <obj_property name="ObjectShortName">RAA_EX_reg_wire[31:0]</obj_property>
-      <obj_property name="CustomSignalColor">#0000FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_v2_tb/B_EX_reg_wire" type="array">
-      <obj_property name="ElementShortName">B_EX_reg_wire[31:0]</obj_property>
-      <obj_property name="ObjectShortName">B_EX_reg_wire[31:0]</obj_property>
-      <obj_property name="CustomSignalColor">#0000FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_v2_tb/F_EX_wire" type="array">
-      <obj_property name="ElementShortName">F_EX_wire[31:0]</obj_property>
-      <obj_property name="ObjectShortName">F_EX_wire[31:0]</obj_property>
-      <obj_property name="CustomSignalColor">#0000FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/top_v2_tb/FS_EX_wire" type="array">
+      <obj_property name="ElementShortName">FS_EX_wire[4:0]</obj_property>
+      <obj_property name="ObjectShortName">FS_EX_wire[4:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/top_v2_tb/V_EX_wire" type="logic">
       <obj_property name="ElementShortName">V_EX_wire</obj_property>
       <obj_property name="ObjectShortName">V_EX_wire</obj_property>
-      <obj_property name="CustomSignalColor">#0000FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/top_v2_tb/N_EX_wire" type="logic">
       <obj_property name="ElementShortName">N_EX_wire</obj_property>
       <obj_property name="ObjectShortName">N_EX_wire</obj_property>
-      <obj_property name="CustomSignalColor">#0000FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/top_v2_tb/C_EX_wire" type="logic">
       <obj_property name="ElementShortName">C_EX_wire</obj_property>
       <obj_property name="ObjectShortName">C_EX_wire</obj_property>
-      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/top_v2_tb/Z_EX_wire" type="logic">
       <obj_property name="ElementShortName">Z_EX_wire</obj_property>
       <obj_property name="ObjectShortName">Z_EX_wire</obj_property>
-      <obj_property name="CustomSignalColor">#0000FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_v2_tb/MW_EX_wire" type="logic">
-      <obj_property name="ElementShortName">MW_EX_wire</obj_property>
-      <obj_property name="ObjectShortName">MW_EX_wire</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_v2_tb/data_OUT_memory_EX_wire" type="array">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">data_OUT_memory_EX_wire[31:0]</obj_property>
-      <obj_property name="ObjectShortName">data_OUT_memory_EX_wire[31:0]</obj_property>
-      <obj_property name="label">memory_out_EX_wire[31:0]</obj_property>
-      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_v2_tb/MD_WB_wire" type="array">
-      <obj_property name="ElementShortName">MD_WB_wire[1:0]</obj_property>
-      <obj_property name="ObjectShortName">MD_WB_wire[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_v2_tb/bus_D_WB_wire" type="array">
-      <obj_property name="ElementShortName">bus_D_WB_wire[31:0]</obj_property>
-      <obj_property name="ObjectShortName">bus_D_WB_wire[31:0]</obj_property>
-      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/top_v2_tb/RW_WB_wire" type="logic">
       <obj_property name="ElementShortName">RW_WB_wire</obj_property>
       <obj_property name="ObjectShortName">RW_WB_wire</obj_property>
-      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/top_v2_tb/DA_WB_wire" type="array">
       <obj_property name="ElementShortName">DA_WB_wire[4:0]</obj_property>
       <obj_property name="ObjectShortName">DA_WB_wire[4:0]</obj_property>
-      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_v2_tb/regFile_DAout_WB_wire" type="array">
-      <obj_property name="ElementShortName">regFile_DAout_WB_wire[31:0]</obj_property>
-      <obj_property name="ObjectShortName">regFile_DAout_WB_wire[31:0]</obj_property>
-      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   <wvobject fp_name="/top_v2_tb/reg_DR_just_written_out_wire" type="array">
+      <obj_property name="ElementShortName">reg_DR_just_written_out_wire[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_DR_just_written_out_wire[31:0]</obj_property>
    </wvobject>
 </wave_config>

@@ -84,6 +84,7 @@ module memProg(
         memword[0] = {MOV, R15, R1, FIFTEEN_B_Z};//1 so there's one shift
         memword[1] = {MOV, R3, R3, FIFTEEN_B_Z};//1 so there's one shift
         memword[2] = {MOV, R4, R4, FIFTEEN_B_Z};//1 so there's one shift
+        memword[3] = {MOV, R19, R0, FIFTEEN_B_Z};//1 so there's one shift
         //memword[12] = {MOV, R31, R0, 15'd0};
 //////  operands (numbers to be multiplied)
    ///////// 1 : large
@@ -124,70 +125,77 @@ module memProg(
         memword[13] = {SUB, R10, R0, R4, TEN_B_Z}; //two's complement
         memword[14] = {JMP, R10, R0, 15'd1}; //skips positive save
         //default for positive
-        memword[15] = {MOV, R10, R4, FIFTEEN_B_Z}; 
+        memword[15] = {MOV, R10, R4, FIFTEEN_B_Z};
 
         ////// sign of RESULT
         memword[16] = {XOR, R11, R7, R8, TEN_B_Z};
-        
+
 ////// multiply preparation
         //clears registers FOR MULTIPLY SUBROUTINE
-        memword[17] = {MOV, R18, R0, FIFTEEN_B_Z}; 
+        memword[17] = {MOV, R18, R0, FIFTEEN_B_Z};
+        memword[18] = {ADI, R18, R0, 15'd33};//addr for loop that shifts and gets carry's
         //make mask
-        memword[18] = {MOV, R3, R1, FIFTEEN_B_Z}; //mask replaces previous multiplier
+        memword[19] = {MOV, R3, R1, FIFTEEN_B_Z}; //mask replaces previous multiplier
         //muplier saved to be shifted to the right; once zero, mutiplication stops
-        memword[19] = {MOV, R2, R9, FIFTEEN_B_Z}; 
-        memword[20] = {MOV, R14, R10, FIFTEEN_B_Z};//R14 stores inital R10
+        memword[20] = {MOV, R2, R9, FIFTEEN_B_Z};
+		//memword[20] = {LSR, R2, R2, 15'd1};//right shift multiplicand by 1
+        memword[21] = {MOV, R14, R10, FIFTEEN_B_Z};//R14 stores inital R10
         memword[22] = {AIU, R16, R0, 15'd23}; //where multiplication starts for JMR instruction
 ////// multiply ************************************************************************************
         //starts here
-        
         memword[23] = {AND, R4, R9, R3, TEN_B_Z}; //masked multiplier replaces previous multiplicand (input)
         memword[24] = {BZ, R0, R4, 15'd3};//IF 0, skip this next addition and subtract excess carry's
         //addition stage
         memword[25] = {ADD, R12, R12, R10, TEN_B_Z};
-        memword[26] = {ADDC, R13, R13, R0, TEN_B_Z};
-        memword[27] = {JMP, R0, R0, 15'd1};//skips subtraction of carry's if addition was executed       
+        memword[26] = {ADDC, R13, R13, R19, TEN_B_Z};
+        //memword[27] = {LSL, R13, R13, 15'd1};//saves carry
+    //    memword[28] = {JMP, R0, R0, 15'd1};//skips subtraction of carry's if addition was executed
     //MSB stage; R17 will be decremented to the correct amount of carry
         //subtracts R19 from R13 if excessive carry's were added
-        memword[28] = {SUB, R13, R13, R19, TEN_B_Z};
-		
+        //memword[29] = {SUB, R13, R13, R19, TEN_B_Z};
     //preparing next multiplication
 	//preparing shift; R17 will be decremented the amoung of times the shift has to happen
-        memword[29] = {MOV, R17, R15, FIFTEEN_B_Z};
-		memword[30] = {MOV, R10, R14, FIFTEEN_B_Z};//so R10 can be shifted left
-        memword[31] = {MOV, R18, R0, FIFTEEN_B_Z};//R18 is JMR's return address for left shifting
+        memword[30] = {MOV, R17, R15, FIFTEEN_B_Z};
+		memword[31] = {MOV, R10, R14, FIFTEEN_B_Z};//so R10 can be shifted left
         memword[32] = {MOV, R19, R0, FIFTEEN_B_Z};//clear R19 to hold excessive carry's
-        
-		memword[33] = {ADI, R18, R0, 15'd34};//addr for loop that shifts and gets carry's
+  //LOOP FOR COLECTING ACARRY'from left shifts
+  //R18 has repeat address for JMR
     //left shift
+        memword[33] = {LSL, R19, R19, 15'd1};//shift the 2nd time
         memword[34] = {LSL, R10, R10, 15'd1};//left shift multiplicand by 1
         memword[35] = {ADDC, R19, R19, R0, TEN_B_Z};//saves carry
-    //repeats shift        
+    //repeats shift
         memword[36] = {SUB, R17, R17, R1, TEN_B_Z};//decrement for nex shift
         memword[37] = {BZ, R0, R17, 15'd1};//skips decrementing once more
         memword[38] = {JMR, R0, R18, FIFTEEN_B_Z};//decrements once more
-        
+
         memword[39] = {LSL, R3, R3, 15'd1};//left shift mask for multiplier by 1
         memword[40] = {ADI, R15, R15, 15'd1};//SHIFT WAS DONE 1 more time
-		memword[41] = {ADD, R13, R13, R19, TEN_B_Z};//add saved carry's
+		//memword[41] = {ADD, R13, R13, R19, TEN_B_Z};//add saved carry's
+        //memword[41] = {LSL, R13, R13, 15'd1};//saves carry
         //multiplier shifted to the right; once zero, mutiplication stops
         memword[42] = {LSR, R2, R2, 15'd1};//right shift multiplicand by 1
         memword[43] = {BZ, R0, R2, 15'd1};//multiplication is over if R2 == 0
-		
+
         memword[44] = {JMR, R0, R16, FIFTEEN_B_Z};//back to the begining of multipl
+
+		// memword[45] = {AND, R4, R9, R3, TEN_B_Z}; //masked multiplier replaces previous multiplicand (input)
+        // memword[46] = {BNZ, R0, R4, 15'd1};//IF 0, skip this next addition and subtract excess carry's
+		// memword[47] = {SUB, R13, R13, R19, TEN_B_Z};
 //************************************************************************************
 //correcting sign of result
         //test if it is signed or unsigned result
-        memword[45] = {BZ, R0, R11, 15'd4};
+        //starts at 50 to leave some space for modificiations on the multiplication algorithm
+        memword[50] = {BZ, R0, R11, 15'd4};
         //IF previous == 1, two's complement onto the results
-        memword[46] = {NOT, R12, R12, FIFTEEN_B_Z};
-        memword[47] = {NOT, R13, R13, FIFTEEN_B_Z};
-        
-        memword[48] = {ADD, R12, R12, R1, TEN_B_Z};
-        memword[49] = {ADDC, R13, R13, R0, TEN_B_Z};
+        memword[51] = {NOT, R12, R12, FIFTEEN_B_Z};
+        memword[52] = {NOT, R13, R13, FIFTEEN_B_Z};
 
-        memword[50] = {MOV, R13, R13, FIFTEEN_B_Z};
-        memword[51] = {MOV, R12, R12, FIFTEEN_B_Z};
+        memword[53] = {ADD, R12, R12, R1, TEN_B_Z};
+        memword[54] = {ADDC, R13, R13, R0, TEN_B_Z};
+
+        memword[55] = {MOV, R13, R13, FIFTEEN_B_Z};
+        memword[56] = {MOV, R12, R12, FIFTEEN_B_Z};
         i=60;
         for(i=i; i< 1024; i = i+1)
             memword[i] = 32'd0;

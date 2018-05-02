@@ -2,13 +2,11 @@
 # Webtalk v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat Apr 28 00:49:20 2018
-# Process ID: 1184
+# Start of session at: Tue May  1 11:06:46 2018
+# Process ID: 9384
 # Current directory: D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.sim/sim_1/behav/xsim/xsim.dir/top_v2_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
 source D:/Google -notrace
-couldn't read file "D:/Google": permission denied
-INFO: [Common 17-206] Exiting Webtalk at Sat Apr 28 00:49:20 2018...
