@@ -17,27 +17,11 @@ integer counter;
 
     initial begin
         for(counter = 0; counter < 32; counter = counter + 1) begin
-            data [counter] = counter; // for easier initial debugging
+            data [counter] = 0; // for easier initial debugging
         end
-        // data[0]=0;
-        // data[1]=0;
-        // data[2]=0;
-         data[3]=32'd5;
-         //data[4]=32'hFFFF_9BD9;
-         data[4]=32'hFFDB_6100?;
-         
-        // data[5]=0;  // Neg flag
-        // data[6]=0;  // set less than Flag
-        // data[7]=0;
-        // data[8]=0;  //LSB
-        // data[9]=0;  //MSB
-        // data[10]=0;
-        // data[11]=15'd9;  //JMR constant
-        // data[12]=15'd6;  //JMR constant
-        // data[16]=32'h8000_0000; // Neg check
-        // data[15]=32'h5; // Y value
-        // data[14]=32'h4; // X value
-        // data[13]=32'd1; // S:T Check value
+         data[1]=32'd1;
+         data[3]=32'h7433_7f31;
+         data[4]=32'h7433_7f31;         
     end
 
     always @(posedge clock) begin
@@ -54,7 +38,7 @@ integer counter;
             //     data [counter] = counter; // for easier initial debugging
             // end
             for(counter = 0; counter < 32; counter = counter + 1) begin
-                data [counter] = counter; // for easier initial debugging
+                data [counter] = 0; // for easier initial debugging
             end
         end // clear all regs on reset
         else if(write_now && (DR != 0 ) ) begin//DR can't be R[0]

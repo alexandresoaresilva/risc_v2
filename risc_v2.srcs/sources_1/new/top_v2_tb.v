@@ -90,7 +90,7 @@ top_v2 UUT(
         reset = 1;
         #5
         reset = 0;
-        #50000
+        #5500
         $finish;
     end
     always #5 clock = ~clock;

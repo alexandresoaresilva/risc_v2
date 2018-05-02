@@ -20,7 +20,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Google Drive/01. ECE4375 Microp 
 INFO: [VRFC 10-311] analyzing module mux_D_prime
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/imports/new/register_file.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module register_file
-WARNING: [VRFC 10-986] literal value truncated to fit in 32 bits [D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/imports/new/register_file.v:27]
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/top_v2.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module top_v2
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.srcs/sources_1/new/top_v2_tb.v" into library xil_defaultlib
