@@ -25,8 +25,8 @@ integer counter;
 		 // data[3]=32'h4;
          // data[4]=32'h4000_0000;         
 
-		data[3]=32'd2_000_000;
-		data[4]=32'd5_000_000;         
+		data[3]=32'hFFFF_FFFF;
+		data[4]=32'hFFFF_FFFF;         
 
     end
 
