@@ -2,6 +2,10 @@
 Simple 32-bit RISC CPU coded in Verilog, based on Mano and Kime's schematics/diagrams. The project was created with Vivado 2017.
 -Data forwarding and branch prediciton have been implemented, so when writing assembly for the cpu, it's not necessary to put no-ops between instructions.
 
+Verilog source files:
+        
+        https://github.com/alexandresoaresilva/risc_v2/tree/master/risc_v2.srcs
+
 -The assembly code in 
         https://github.com/alexandresoaresilva/risc_v2/blob/master/risc_v2.srcs/sources_1/new/memProg.v
         
