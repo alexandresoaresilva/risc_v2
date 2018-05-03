@@ -1,6 +1,8 @@
 # risc_v2
-Simple 32-bit RISC CPU coded in Verilog, based on Mano and Kime's schematics/diagrams. The project was created with Vivado 2017.
--Data forwarding and branch prediciton have been implemented, so when writing assembly for the cpu, it's not necessary to put no-ops between instructions.
+Simple 32-bit RISC CPU coded in Verilog, based on Mano and Kime's schematics/diagrams. It follows the 4-stage RISC CPU with stages IF, DOF, EX, and WB, separated by their respective clock ticks.
+
+The project was created with Vivado 2017.
+-Data forwarding and branch prediciton have been implemented, so when writing assembly for the cpu, it's not necessary to put no-ops between instructions.  The textbook's diagram, however, brings a wrong implementation of the mux D prime, fundamental for data forwarding. Mux D prime's inputs have been replaced by a match  of the ones on mux D, so now it outputs register content forwarded instead of memory content (wich is what it did before the correction, when following strictly the textbook's implementation).
 
 Verilog source files:
         
