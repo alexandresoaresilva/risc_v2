@@ -15,8 +15,8 @@ demonstrates a 32 bit x 32 bit multiplication, which yields a result in two regi
 To change the registers that hold the values being multiplied, change the values of R3 and R4 in
         https://github.com/alexandresoaresilva/risc_v2/blob/master/risc_v2.srcs/sources_1/imports/new/register_file.v
         
-            data[3]=32'd2_000_000;
-            data[4]=32'd5_000_000;  
+		data[3]=32'hFFFF_FFFF;
+		data[4]=32'hFFFF_FFFF;
             
   Then, simulate it for about 45 microseconds, depending on the size of your input. Large positive values will take more simulated time to calculate than negative values in my experience.
   
