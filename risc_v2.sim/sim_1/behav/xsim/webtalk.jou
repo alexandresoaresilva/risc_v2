@@ -2,8 +2,8 @@
 # Webtalk v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Wed May  2 11:16:12 2018
-# Process ID: 6048
+# Start of session at: Sun May  6 13:59:08 2018
+# Process ID: 25768
 # Current directory: D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.sim/sim_1/behav/xsim/xsim.dir/top_v2_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: D:/Google Drive/01. ECE4375 Microp Archcture/Vivado_projs/risc_v2/risc_v2.sim/sim_1/behav/xsim/webtalk.log

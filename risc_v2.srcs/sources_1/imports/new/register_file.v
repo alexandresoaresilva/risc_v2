@@ -20,13 +20,14 @@ integer counter;
             data [counter] = 0; // for easier initial debugging
         end
          data[1]=32'd1;
-         // data[3]=32'hF0F0_F0F0;
-         // data[4]=32'hF0F0_F0F0;         
+//          data[3]=32'hF0F0_F0F0;
+//          data[4]=32'hF0F0_F0F0;         
 		 // data[3]=32'h4;
          // data[4]=32'h4000_0000;         
-
 		data[3]=32'hFFFF_FFFF;
-		data[4]=32'hFFFF_FFFF;         
+        data[4]=32'h0;
+//		data[3]=32'hFFFF_FFFF;
+//		data[4]=32'hFFFF_FFFF;         
 
     end
 
