@@ -18,6 +18,9 @@ To change the registers that hold the values being multiplied, change the values
 		data[3]=32'hFFFF_FFFF;
 		data[4]=32'hFFFF_FFFF;
             
-  Then, simulate it for about 45 microseconds, depending on the size of your input. Large positive values will take more simulated time to calculate than negative values in my experience.
+  Then, for a simulated 100 MHz clock, run the test bench for about 45 microseconds, depending on the size of your input. Large positive values will take more simulated time to calculate than negative values in my experience. this is the test bench used to run the top module (whole pipeline):
+  
+  	https://github.com/alexandresoaresilva/risc_v2/blob/master/risc_v2.srcs/sources_1/new/top_v2_tb.v
   
  I still hope to make the documentation of the registers on the cpu better, while describing how it works. Hope it is useful for somebody out there.
+Have fun!
