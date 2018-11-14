@@ -24,5 +24,5 @@ To change the registers that hold the values being multiplied, change the values
   
   	https://github.com/alexandresoaresilva/risc_v2/blob/master/risc_v2.srcs/sources_1/new/top_v2_tb.v
   
- I still hope to make the documentation of the registers on the cpu better, while describing how it works. Hope it is useful for somebody out there.
-Have fun!
+  
+  Hope it is useful for somebody out there. Have fun!
